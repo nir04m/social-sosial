@@ -84,7 +84,7 @@ model Like {
   post Post @relation(fields: [postId], references: [id], onDelete: Cascade) //cascade delete all likes when post is deleted
   user User @relation(fields: [userId], references: [id], onDelete: Cascade) //cascade delete all likes when user is deleted
 
-  @@unique([postId, userId]) //a user can like a post only once
+  @@unique([ userId, postId]) //a user can like a post only once
   @@index([postId, userId]) //index for faster querying of likes by post and user
 }
 
