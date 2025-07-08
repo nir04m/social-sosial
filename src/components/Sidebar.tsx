@@ -17,7 +17,7 @@ import { Avatar, AvatarImage } from './ui/avatar';
 import { Separator } from './ui/separator';
 import { LinkIcon, MapPinIcon } from "lucide-react";
 
-async function Sidebar() {
+export async function Sidebar() {
     const authUser = await currentUser();
     if (!authUser) return <UnAuthenticatedSidebar />;
     const user = await getUserbyClerkId(authUser.id);
