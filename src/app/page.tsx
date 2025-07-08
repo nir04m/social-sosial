@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ModeToggle } from "@/components/modeToggle";
 import { currentUser } from "@clerk/nextjs/server";
 import CreatePost from "@/components/CreatePost";
+import SuggestionUsers from "@/components/SuggestionUsers";
 
 export default async function Home() {
   const user = await currentUser();
@@ -14,7 +15,7 @@ export default async function Home() {
         
       </div>
       <div className="hidden lg:block lg:col-span-4 sticky top-20">
-        Who to follow
+        <SuggestionUsers />
       </div>
     </div>
   );

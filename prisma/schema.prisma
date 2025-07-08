@@ -111,7 +111,6 @@ model Notification {
   read Boolean @default(false) //whether the notification has been read
   postId String?
   commentId String?
-  content String //e.g. "User X liked your post", "User Y commented on your post"
   createdAt DateTime @default(now())
 
   // Relations

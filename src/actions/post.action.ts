@@ -8,6 +8,10 @@ export async function createPost(content: string, image: string) {
     try {
         const userid = await getDbUserId();
 
+        if (!userid) {
+            return {success: false, error: "User not authenticated"};
+        }
+
         const post = await prisma.post.create({
             data: {
                 content,
@@ -20,5 +24,13 @@ export async function createPost(content: string, image: string) {
         return {success: true, post};
     } catch (error) {
         return {success: false, error: "Failed to create post"};
+    }
+}
+
+export async function getPosts() {
+    try {
+        
+    } catch (error) {
+        return { success: false, error: "Failed to fetch posts" };
     }
 }
